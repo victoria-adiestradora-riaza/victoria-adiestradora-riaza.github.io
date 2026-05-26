@@ -16,53 +16,53 @@
             theme: {
                 extend: {
                     colors: {
-                        "background": "#fbf9f8",
-                        "on-primary": "#ffffff",
-                        "primary-fixed-dim": "#adcebd",
-                        "secondary-fixed": "#ffdbd0",
-                        "surface-container-low": "#f5f3f3",
-                        "surface-dim": "#dbd9d9",
-                        "surface-container-high": "#eae8e7",
+                        "background": "#000000",
+                        "on-primary": "#000000",
+                        "primary-fixed-dim": "#d8b4fe",
+                        "secondary-fixed": "#f5f3ff",
+                        "surface-container-low": "#111111",
+                        "surface-dim": "#121212",
+                        "surface-container-high": "#1a1a1a",
                         "on-secondary": "#ffffff",
-                        "on-primary-fixed-variant": "#2f4d40",
-                        "tertiary": "#312f27",
+                        "on-primary-fixed-variant": "#581c87",
+                        "tertiary": "#0c0b12",
                         "error-container": "#ffdad6",
                         "on-error": "#ffffff",
-                        "on-secondary-fixed": "#3a0a00",
-                        "secondary-fixed-dim": "#ffb59e",
+                        "on-secondary-fixed": "#2e004f",
+                        "secondary-fixed-dim": "#d8b4fe",
                         "on-error-container": "#93000a",
-                        "surface-variant": "#e4e2e2",
-                        "on-tertiary-fixed": "#1e1c14",
-                        "on-surface-variant": "#424844",
-                        "inverse-primary": "#adcebd",
-                        "primary": "#163428",
-                        "on-background": "#1b1c1c",
-                        "surface": "#fbf9f8",
-                        "inverse-on-surface": "#f2f0f0",
-                        "surface-container-lowest": "#ffffff",
-                        "on-primary-container": "#99baa9",
-                        "on-secondary-container": "#742910",
-                        "primary-container": "#2d4b3e",
-                        "tertiary-container": "#48453c",
-                        "primary-fixed": "#c8ead8",
-                        "tertiary-fixed": "#e8e2d6",
-                        "on-tertiary-container": "#b7b2a7",
-                        "on-primary-fixed": "#012116",
-                        "secondary": "#9a4529",
-                        "secondary-container": "#fc9170",
-                        "inverse-surface": "#303030",
-                        "surface-bright": "#fbf9f8",
-                        "outline-variant": "#c1c8c3",
-                        "on-tertiary-fixed-variant": "#4a473e",
+                        "surface-variant": "#181818",
+                        "on-tertiary-fixed": "#f5f3ff",
+                        "on-surface-variant": "#9ca3af",
+                        "inverse-primary": "#d8b4fe",
+                        "primary": "#c084fc",
+                        "on-background": "#f3f4f6",
+                        "surface": "#0d0d0d",
+                        "inverse-on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#080808",
+                        "on-primary-container": "#f3e8ff",
+                        "on-secondary-container": "#f5f3ff",
+                        "primary-container": "#3b0764",
+                        "tertiary-container": "#151515",
+                        "primary-fixed": "#e9d5ff",
+                        "tertiary-fixed": "#1a1a1a",
+                        "on-tertiary-container": "#9ca3af",
+                        "on-primary-fixed": "#2e004f",
+                        "secondary": "#a855f7",
+                        "secondary-container": "#581c87",
+                        "inverse-surface": "#f3f4f6",
+                        "surface-bright": "#121212",
+                        "outline-variant": "#374151",
+                        "on-tertiary-fixed-variant": "#9ca3af",
                         "on-tertiary": "#ffffff",
-                        "on-surface": "#1b1c1c",
+                        "on-surface": "#f9fafb",
                         "error": "#ba1a1a",
-                        "surface-tint": "#466557",
-                        "surface-container-highest": "#e4e2e2",
-                        "surface-container": "#efeded",
-                        "on-secondary-fixed-variant": "#7b2e14",
-                        "tertiary-fixed-dim": "#cbc6ba",
-                        "outline": "#727974"
+                        "surface-tint": "#a855f7",
+                        "surface-container-highest": "#222222",
+                        "surface-container": "#151515",
+                        "on-secondary-fixed-variant": "#581c87",
+                        "tertiary-fixed-dim": "#222222",
+                        "outline": "#4b5563"
                     },
                     borderRadius: {
                         "DEFAULT": "0.25rem",
@@ -100,37 +100,81 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        
+        /* Efecto de borde morado difuminado (resplandor) */
+        .purple-glow-card {
+            border: 1px solid rgba(168, 85, 247, 0.3) !important;
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15), 
+                        inset 0 0 12px rgba(168, 85, 247, 0.05) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+        }
+        .purple-glow-card:hover {
+            border-color: rgba(192, 132, 252, 0.7) !important;
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.35), 
+                        inset 0 0 15px rgba(168, 85, 247, 0.15) !important;
+        }
+
+        /* Animación de flotado suave */
+        @keyframes float-gentle {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating-card {
+            animation: float-gentle 6s ease-in-out infinite;
+        }
+
+        /* Delays para asincronía en flotación */
+        .float-delay-1 {
+            animation-delay: 1.5s;
+        }
+        .float-delay-2 {
+            animation-delay: 3s;
+        }
+        .float-delay-3 {
+            animation-delay: 4.5s;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar (Shared Component) -->
-<nav class="fixed top-0 w-full z-50 bg-white/90 dark:bg-stone-900/90 backdrop-blur-md border-b border-emerald-900/10 dark:border-emerald-50/10">
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-purple-500/10">
 <div class="flex justify-between items-center max-w-[1200px] mx-auto px-6 py-4">
-<div class="text-xl font-semibold text-emerald-900 dark:text-emerald-50 tracking-tighter font-['Noto_Serif']">Victoria Sornosa Rueda</div>
+<div class="flex items-center gap-3">
+  <img src="logo_stpr.jpg" alt="Logo StPr" class="w-10 h-10 rounded-full border border-purple-500/20 object-cover"/>
+  <div class="text-xl font-semibold text-purple-300 hover:text-purple-200 transition-colors tracking-tighter font-['Noto_Serif']">Victoria Sornosa Rueda</div>
+</div>
 <!-- Desktop Nav -->
 <div class="hidden md:flex items-center space-x-8">
-<a class="font-['Noto_Serif'] text-base tracking-tight text-stone-600 dark:text-stone-400 hover:text-emerald-900 transition-colors" href="#servicios">Servicios</a>
-<a class="font-['Noto_Serif'] text-base tracking-tight text-stone-600 dark:text-stone-400 hover:text-emerald-900 transition-colors" href="#sobre-mi">Sobre mí</a>
-<a class="font-['Noto_Serif'] text-base tracking-tight text-stone-600 dark:text-stone-400 hover:text-emerald-900 transition-colors" href="#metodologia">Metodología</a>
-<a class="font-['Noto_Serif'] text-base tracking-tight text-stone-600 dark:text-stone-400 hover:text-emerald-900 transition-colors" href="#localizacion">Riaza &amp; Segovia</a>
+<a class="font-['Noto_Serif'] text-base tracking-tight text-gray-300 hover:text-purple-400 transition-colors" href="#servicios">Servicios</a>
+<a class="font-['Noto_Serif'] text-base tracking-tight text-gray-300 hover:text-purple-400 transition-colors" href="#sobre-mi">Sobre mí</a>
+<a class="font-['Noto_Serif'] text-base tracking-tight text-gray-300 hover:text-purple-400 transition-colors" href="#metodologia">Metodología</a>
+<a class="font-['Noto_Serif'] text-base tracking-tight text-gray-300 hover:text-purple-400 transition-colors" href="#localizacion">Riaza &amp; Segovia</a>
 </div>
-<a class="hidden md:inline-flex bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:opacity-80 scale-95 transition-transform" href="#contacto">Reservar Sesión</a>
+<a class="hidden md:inline-flex bg-purple-600 text-white font-label-md text-label-md px-6 py-3 rounded-full hover:bg-purple-500 hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] scale-95 transition-all" href="#contacto">Reservar Sesión</a>
 </div>
 </nav>
 <!-- Hero Section -->
 <header class="relative pt-32 pb-section-padding px-gutter max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-12">
 <div class="w-full md:w-1/2 z-10">
 <h1 class="font-headline-xl text-headline-xl text-primary mb-6">victoria sornosa, adiestradora de perros</h1>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Estamos cerca del Parque El Rasero, en Riaza, en plena Sierra de Ayllón y cerca de Segovia ciudad. Nuestra ubicación es estratégica para dar servicio a todos los pueblos de la zona. Estamos comunicados por la carretera N-110, que es la vía principal que pasa por Riaza. Si nos buscas desde Madrid, la ruta más directa es por la autovía A-1, tomando la salida en Santo Tomé del Puerto, donde se cruzan las vías hacia Segovia y Madrid. También estamos muy cerca de Aranda de Duero, conectando a través de la A-1 y las carreteras locales que pasan por Boceguillas (como la SG-V-9113). De esta manera, facilitamos el acceso a un adiestrador de perros en toda esta comarca, donde a menudo es difícil encontrar profesionales fuera de las grandes capitales.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Ofrecemos educación canina profesional con base en <strong>Riaza</strong>, dando cobertura también a localidades vecinas como <strong>Boceguillas</strong>, <strong>Ayllón</strong> y <strong>Buitrago de Lozoya</strong>, así como a zonas más amplias que incluyen <strong>Aranda de Duero</strong> y <strong>Segovia</strong> ciudad. Gracias a una excelente comunicación vial por la carretera N-110 y la autovía A-1 en plena Sierra de Ayllón, llegar a nuestras instalaciones es muy fácil y rápido. Tanto si buscas ayuda para tu perro y vienes desde <strong>Riaza</strong>, <strong>Boceguillas</strong>, <strong>Ayllón</strong> o <strong>Buitrago</strong>, trabajamos en un entorno natural ideal para que el aprendizaje sea efectivo, en plena naturaleza y sin el estrés de las grandes capitales.</p>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-lg">Fomentamos el respeto y el equilibrio natural entre perros y personas a través de un adiestramiento comprensivo y personalizado en un entorno inigualable.</p>
 <div class="flex flex-wrap gap-4">
 <a class="bg-secondary text-on-secondary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm" href="#contacto">Pedir valoración</a>
 <a class="bg-surface-container-high text-on-surface font-label-md text-label-md px-8 py-4 rounded-full hover:bg-surface-variant transition-colors border border-outline-variant" href="#sobre-mi">Conocer a Victoria</a>
 </div>
 </div>
-<div class="w-full md:w-1/2 relative h-[500px] rounded-xl overflow-hidden bg-surface-variant">
-<img alt="Victoria Sornosa Rueda with a dog in natural Segovia landscape" class="w-full h-full object-cover object-center" data-alt="Professional dog trainer walking with a happy dog in a beautiful, sunny Spanish countryside landscape with mountains in the background, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYkoRsl9_ftwrgrWUNu-4RXC5kmnKrL2yuYa3VBKPhj3weJLW9gydqtIRIwCQOwyFqyoNdbh9xkzFQ2AOilRlMNeXDfl8pkBEJB3edkkvFYNpI7U1-ZRgiutkp5WwHI0Zc5voGevL4v6ofXCRYSDqlvFpdh67mQlaSRJsnZcLhp3RGnsaeJZDUVY9W4Q24l8_e4YpnbHYwZvgDMqhUSwbhTFOHcVsRotWpAcnlyLM0fSbNgcCfpOC82sklCHNmNBbB_EPDKnqiadDv"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+<div class="w-full md:w-1/2 relative h-[500px] rounded-xl overflow-hidden bg-surface-variant purple-glow-card floating-card">
+<img alt="Victoria Sornosa Rueda con un perro en el campo" class="w-full h-full object-cover object-center" src="victoria_perro.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 </div>
 </header>
 <!-- Services Grid (Bento Style) -->
@@ -141,44 +185,75 @@
 <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Soluciones adaptadas a cada etapa de la vida de tu perro.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px]">
-<!-- Large Card -->
-<div class="md:col-span-2 lg:col-span-2 row-span-2 relative rounded-xl overflow-hidden group bg-surface-variant">
-<img alt="Educación básica" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dog and owner engaged in basic obedience training outdoors, focused attention, sunny day" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUA9ytgJ6bECYFqXp-JZqmY0CQLD7JI1DfD96dgBncBRURaDL0pazFRKF27oXdwgLPaA1JfZsVvulirApX0ku-DtWDvvJnvr1fiyht5piW3ajUsyXoxAeQpxwXpLMhNyvszCeeQeMh3fpTCRqriR1M5WWR8Pu0lWbRK6a0FgkqqPDUEAIYzTn3u7MKgBxuEbEveEJvxiRN6qxXpMcD8axDogYFZoB7zXTnUWTwKnBU4P5Z-mD1HG7mkBRN64cW5w7TtDzbcXJIykUM"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-8 w-full">
-<span class="inline-block px-3 py-1 bg-secondary/90 text-on-secondary font-label-md text-label-md rounded-full mb-3">Principal</span>
-<h3 class="font-headline-md text-headline-md text-on-primary mb-2">Educación básica</h3>
-<p class="font-body-md text-body-md text-on-primary/90">Fundamentos para una convivencia armoniosa.</p>
-</div>
+<!-- Large Card (Carousel) -->
+<div class="md:col-span-2 lg:col-span-2 row-span-2 relative rounded-xl overflow-hidden group bg-surface-variant purple-glow-card floating-card float-delay-1" id="photo-carousel-card">
+  <!-- Carousel Images -->
+  <div class="absolute inset-0 w-full h-full" id="carousel-slides">
+    <img alt="Victoria con perro y trofeo" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100" src="victoria_trofeo.jpg"/>
+    <img alt="Perros en el campo" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="perros.jpg"/>
+    <img alt="Educación básica - Foto 1" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_1.jpg"/>
+    <img alt="Educación básica - Foto 2" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_2.jpg"/>
+    <img alt="Educación básica - Foto 3" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_3.jpg"/>
+    <img alt="Educación básica - Foto 4" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_4.jpg"/>
+  </div>
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none z-10"></div>
+  
+  <!-- Navigation Controls -->
+  <div class="absolute inset-0 flex justify-between items-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+    <button onclick="prevSlide(event)" class="w-10 h-10 rounded-full bg-black/60 hover:bg-purple-600 text-white flex items-center justify-center backdrop-blur-sm pointer-events-auto transition-colors border border-purple-500/30 shadow-md">
+      <span class="material-symbols-outlined">chevron_left</span>
+    </button>
+    <button onclick="nextSlide(event)" class="w-10 h-10 rounded-full bg-black/60 hover:bg-purple-600 text-white flex items-center justify-center backdrop-blur-sm pointer-events-auto transition-colors border border-purple-500/30 shadow-md">
+      <span class="material-symbols-outlined">chevron_right</span>
+    </button>
+  </div>
+  
+  <!-- Indicators / Dots -->
+  <div class="absolute top-6 right-6 flex space-x-2 z-20 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/10">
+    <button onclick="goToSlide(0, event)" class="w-2.5 h-2.5 rounded-full bg-white transition-all duration-300" aria-label="Slide 1"></button>
+    <button onclick="goToSlide(1, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 2"></button>
+    <button onclick="goToSlide(2, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 3"></button>
+    <button onclick="goToSlide(3, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 4"></button>
+    <button onclick="goToSlide(4, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 5"></button>
+    <button onclick="goToSlide(5, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 6"></button>
+  </div>
+
+  <!-- Content Overlay -->
+  <div class="absolute bottom-0 left-0 p-8 w-full z-10 pointer-events-none">
+    <span class="inline-block px-3 py-1 bg-purple-600 text-white font-label-md text-label-md rounded-full mb-3 pointer-events-auto shadow-sm">Galería de fotos</span>
+    <h3 class="font-headline-md text-headline-md text-purple-300 mb-2 pointer-events-auto font-bold drop-shadow-md">Educación básica</h3>
+    <p class="font-body-md text-body-md text-gray-200 pointer-events-auto drop-shadow-sm">Fundamentos para una convivencia armoniosa con casos reales.</p>
+  </div>
 </div>
 <!-- Regular Cards -->
-<div class="bg-surface p-6 rounded-xl border border-primary-container/10 flex flex-col justify-between hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-secondary text-3xl mb-4" data-icon="pets">pets</span>
+<div class="bg-surface p-6 rounded-xl flex flex-col justify-between transition-all purple-glow-card floating-card float-delay-2">
+<span class="material-symbols-outlined text-purple-400 text-3xl mb-4" data-icon="pets">pets</span>
 <div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Obediencia</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Respuesta fiable en cualquier situación.</p>
+<h3 class="font-headline-md text-headline-md text-purple-300 mb-2">Obediencia</h3>
+<p class="font-body-md text-body-md text-gray-400 text-sm">Respuesta fiable en cualquier situación.</p>
 </div>
 </div>
-<div class="bg-surface p-6 rounded-xl border border-primary-container/10 flex flex-col justify-between hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-secondary text-3xl mb-4" data-icon="favorite">favorite</span>
+<div class="bg-surface p-6 rounded-xl flex flex-col justify-between transition-all purple-glow-card floating-card float-delay-3">
+<span class="material-symbols-outlined text-purple-400 text-3xl mb-4" data-icon="favorite">favorite</span>
 <div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Bienestar</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Equilibrio físico y emocional.</p>
+<h3 class="font-headline-md text-headline-md text-purple-300 mb-2">Bienestar</h3>
+<p class="font-body-md text-body-md text-gray-400 text-sm">Equilibrio físico y emocional.</p>
 </div>
 </div>
-<div class="bg-surface p-6 rounded-xl border border-primary-container/10 flex flex-col justify-between hover:border-primary/30 transition-colors">
-<span class="material-symbols-outlined text-secondary text-3xl mb-4" data-icon="home">home</span>
+<div class="bg-surface p-6 rounded-xl flex flex-col justify-between transition-all purple-glow-card floating-card">
+<span class="material-symbols-outlined text-purple-400 text-3xl mb-4" data-icon="home">home</span>
 <div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Convivencia</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-sm">Mejora la relación en el hogar.</p>
+<h3 class="font-headline-md text-headline-md text-purple-300 mb-2">Convivencia</h3>
+<p class="font-body-md text-body-md text-gray-400 text-sm">Mejora la relación en el hogar.</p>
 </div>
 </div>
-<div class="bg-primary p-6 rounded-xl text-on-primary flex flex-col justify-between">
+<div class="bg-purple-950/20 p-6 rounded-xl text-white flex flex-col justify-between purple-glow-card floating-card float-delay-1">
 <div>
-<h3 class="font-headline-md text-headline-md mb-2">Acompañamiento personalizado</h3>
-<p class="font-body-md text-body-md opacity-90 text-sm">Planes diseñados específicamente para ti y tu perro.</p>
+<h3 class="font-headline-md text-headline-md text-purple-300 mb-2">Acompañamiento personalizado</h3>
+<p class="font-body-md text-body-md opacity-90 text-sm text-gray-300">Planes diseñados específicamente para ti y tu perro.</p>
 </div>
-<a class="font-label-md text-label-md mt-4 underline hover:text-secondary-fixed transition-colors" href="#contacto">Saber más</a>
+<a class="font-label-md text-label-md mt-4 underline text-purple-400 hover:text-purple-300 transition-colors" href="#contacto">Saber más</a>
 </div>
 </div>
 </div>
@@ -187,14 +262,14 @@
 <!-- Sobre mí Section -->
 <section class="py-section-padding px-gutter bg-surface-bright" id="sobre-mi">
     <div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-12">
-        <div class="w-full md:w-1/2 relative h-[500px] rounded-xl overflow-hidden bg-surface-variant">
-            <img alt="Victoria Sornosa Rueda entrenando a un perro" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover"/>
+        <div class="w-full md:w-1/2 relative h-[500px] rounded-xl overflow-hidden bg-surface-variant purple-glow-card floating-card float-delay-2">
+            <img alt="Victoria Sornosa Rueda con su perro en el campo" src="sobre_mi_nueva2.jpg" class="w-full h-full object-cover"/>
         </div>
         <div class="w-full md:w-1/2">
             <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Sobre Victoria</h2>
             <p class="font-body-md text-body-md text-on-surface-variant mb-4">Con años de experiencia en educación canina respetuosa, mi objetivo es fortalecer el vínculo entre los perros y sus familias. Creo firmemente que un adiestramiento basado en el entendimiento y el respeto mutuo es la clave para una convivencia armoniosa.</p>
             <p class="font-body-md text-body-md text-on-surface-variant mb-6">Mi enfoque se centra en leer el lenguaje del perro, comprender sus necesidades y proporcionar a los propietarios las herramientas necesarias para comunicarse eficazmente.</p>
-            <a href="#contacto" class="inline-block border-b-2 border-secondary text-secondary font-label-md pb-1 hover:text-secondary-container hover:border-secondary-container transition-colors">Conoce mi historia</a>
+            <a href="#contacto" class="inline-block border-b-2 border-purple-400 text-purple-400 font-label-md pb-1 hover:text-purple-300 hover:border-purple-300 transition-colors">Conoce mi historia</a>
         </div>
     </div>
 </section>
@@ -207,18 +282,18 @@
             <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Un enfoque holístico que respeta la naturaleza de tu perro.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-surface-container-lowest p-8 rounded-xl border border-primary-container/10">
-                <span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="psychology">psychology</span>
+            <div class="bg-surface p-8 rounded-xl purple-glow-card floating-card float-delay-1">
+                <span class="material-symbols-outlined text-purple-400 text-4xl mb-4" data-icon="psychology">psychology</span>
                 <h3 class="font-headline-md text-headline-md text-primary mb-2">Entendimiento</h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">Analizamos el comportamiento y el entorno de tu perro para comprender la raíz de cualquier desafío.</p>
             </div>
-            <div class="bg-surface-container-lowest p-8 rounded-xl border border-primary-container/10">
-                <span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="handshake">handshake</span>
+            <div class="bg-surface p-8 rounded-xl purple-glow-card floating-card float-delay-2">
+                <span class="material-symbols-outlined text-purple-400 text-4xl mb-4" data-icon="handshake">handshake</span>
                 <h3 class="font-headline-md text-headline-md text-primary mb-2">Respeto y Vínculo</h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">Fomentamos la confianza mutua mediante refuerzo positivo, sin métodos coercitivos ni miedos.</p>
             </div>
-            <div class="bg-surface-container-lowest p-8 rounded-xl border border-primary-container/10">
-                <span class="material-symbols-outlined text-secondary text-4xl mb-4" data-icon="school">school</span>
+            <div class="bg-surface p-8 rounded-xl purple-glow-card floating-card float-delay-3">
+                <span class="material-symbols-outlined text-purple-400 text-4xl mb-4" data-icon="school">school</span>
                 <h3 class="font-headline-md text-headline-md text-primary mb-2">Educación Práctica</h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">Dotamos a la familia de herramientas prácticas para el día a día, logrando una convivencia real y duradera.</p>
             </div>
@@ -235,7 +310,7 @@
             <ul class="space-y-4 mb-8">
                 <li class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-secondary">location_on</span>
-                    <span class="font-body-md text-on-surface-variant">Sesiones a domicilio en Segovia y alrededores.</span>
+                    <span class="font-body-md text-on-surface-variant">Sesiones presenciales en nuestro centro en Riaza.</span>
                 </li>
                 <li class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-secondary">park</span>
@@ -243,11 +318,11 @@
                 </li>
                 <li class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-secondary">commute</span>
-                    <span class="font-body-md text-on-surface-variant">Disponibilidad para desplazamientos.</span>
+                    <span class="font-body-md text-on-surface-variant">Ubicación de fácil acceso y bien comunicada.</span>
                 </li>
             </ul>
         </div>
-        <div class="w-full md:w-1/2 relative h-[400px] rounded-xl overflow-hidden bg-surface-variant">
+        <div class="w-full md:w-1/2 relative h-[400px] rounded-xl overflow-hidden bg-surface-variant purple-glow-card floating-card float-delay-1">
             <iframe 
                 src="https://maps.google.com/maps?q=Parque%20El%20Rasero,%20Riaza&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 class="w-full h-full border-0" 
@@ -262,48 +337,95 @@
 <!-- Contacto Section -->
 <section class="py-section-padding bg-tertiary px-gutter" id="contacto">
     <div class="max-w-container-max mx-auto">
-        <div class="bg-surface-container-lowest rounded-2xl p-8 md:p-12 shadow-sm border border-outline-variant max-w-3xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="font-headline-lg text-headline-lg text-primary mb-3">Reserva tu sesión</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant">Cuéntanos tu caso y nos pondremos en contacto contigo lo antes posible para organizar una primera valoración.</p>
+        <div class="bg-surface rounded-2xl p-8 md:p-12 max-w-3xl mx-auto purple-glow-card text-center">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Contacta con nosotros</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Para pedir cita o solicitar más información, puedes contactarnos directamente por teléfono o WhatsApp:</p>
+            
+            <div class="inline-flex items-center justify-center gap-4 bg-purple-900/30 border border-purple-500/30 p-6 rounded-xl mb-8">
+                <span class="material-symbols-outlined text-4xl text-purple-400">phone_iphone</span>
+                <span class="text-4xl font-bold text-white tracking-wider">616 90 48 03</span>
             </div>
-            <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="nombre" class="block font-label-md text-primary mb-2">Nombre completo</label>
-                        <input type="text" id="nombre" class="w-full bg-surface-container-low border-b border-primary focus:outline-none focus:border-secondary p-3 rounded-t-md font-body-md" placeholder="Tu nombre">
-                    </div>
-                    <div>
-                        <label for="telefono" class="block font-label-md text-primary mb-2">Teléfono de contacto</label>
-                        <input type="tel" id="telefono" class="w-full bg-surface-container-low border-b border-primary focus:outline-none focus:border-secondary p-3 rounded-t-md font-body-md" placeholder="Tu teléfono">
-                    </div>
-                </div>
-                <div>
-                    <label for="perro" class="block font-label-md text-primary mb-2">Nombre y raza/cruce del perro</label>
-                    <input type="text" id="perro" class="w-full bg-surface-container-low border-b border-primary focus:outline-none focus:border-secondary p-3 rounded-t-md font-body-md" placeholder="Ej. Max, Pastor Alemán">
-                </div>
-                <div>
-                    <label for="mensaje" class="block font-label-md text-primary mb-2">Cuéntame brevemente sobre tu perro</label>
-                    <textarea id="mensaje" rows="4" class="w-full bg-surface-container-low border-b border-primary focus:outline-none focus:border-secondary p-3 rounded-t-md font-body-md resize-none" placeholder="Motivo de la consulta..."></textarea>
-                </div>
-                <div class="text-center mt-8">
-                    <button type="button" class="bg-secondary text-on-secondary font-label-md text-label-md px-10 py-4 rounded-full hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm w-full md:w-auto">Enviar solicitud</button>
-                </div>
-            </form>
+            
+            <div>
+                <a href="https://wa.me/34616904803" target="_blank" rel="noopener noreferrer" class="bg-secondary text-on-secondary font-label-md text-label-md px-10 py-4 rounded-full hover:bg-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] hover:text-white transition-all shadow-sm inline-block">
+                    Enviar WhatsApp
+                </a>
+            </div>
         </div>
     </div>
 </section>
 <!-- Footer (Shared Component) -->
-<footer class="w-full py-12 mt-20 bg-stone-50 dark:bg-stone-950 border-t border-emerald-900/10 dark:border-emerald-50/10">
+<footer class="w-full py-12 mt-20 bg-black border-t border-purple-500/10">
 <div class="flex flex-col md:flex-row justify-between items-center max-w-[1200px] mx-auto px-8 gap-6">
-<div class="text-lg font-serif italic text-emerald-950 dark:text-white">Victoria Sornosa Rueda</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a class="font-['Manrope'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-500 hover:text-emerald-900 dark:hover:text-emerald-100 hover:underline transition-all ease-in-out duration-200" href="#">Aviso Legal</a>
-<a class="font-['Manrope'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-500 hover:text-emerald-900 dark:hover:text-emerald-100 hover:underline transition-all ease-in-out duration-200" href="#">Política de Privacidad</a>
-<a class="font-['Manrope'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-500 hover:text-emerald-900 dark:hover:text-emerald-100 hover:underline transition-all ease-in-out duration-200" href="#">Cookies</a>
-<a class="font-['Manrope'] text-sm uppercase tracking-widest text-stone-500 dark:text-stone-500 hover:text-emerald-900 dark:hover:text-emerald-100 hover:underline transition-all ease-in-out duration-200" href="#contacto">Contacto</a>
+<div class="flex items-center gap-3">
+  <img src="logo_stpr.jpg" alt="Logo StPr" class="w-8 h-8 rounded-full border border-purple-500/20 object-cover"/>
+  <div class="text-lg font-serif italic text-purple-300">Victoria Sornosa Rueda</div>
 </div>
-<div class="font-['Manrope'] text-sm uppercase tracking-widest text-emerald-900 dark:text-emerald-50">© 2024 Victoria Sornosa Rueda. Educación Canina en Riaza y Segovia.</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-gray-400 hover:text-purple-400 hover:underline transition-all ease-in-out duration-200" href="#">Aviso Legal</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-gray-400 hover:text-purple-400 hover:underline transition-all ease-in-out duration-200" href="#">Política de Privacidad</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-gray-400 hover:text-purple-400 hover:underline transition-all ease-in-out duration-200" href="#">Cookies</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-gray-400 hover:text-purple-400 hover:underline transition-all ease-in-out duration-200" href="#contacto">Contacto</a>
+</div>
+<div class="font-['Manrope'] text-sm uppercase tracking-widest text-gray-500">© 2024 Victoria Sornosa Rueda. Educación Canina en Riaza y Segovia.</div>
 </div>
 </footer>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('#carousel-slides img');
+const dots = document.querySelectorAll('#photo-carousel-card button[onclick^="goToSlide"]');
+
+function updateCarousel() {
+    slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+            slide.classList.remove('opacity-0');
+            slide.classList.add('opacity-100');
+        } else {
+            slide.classList.remove('opacity-100');
+            slide.classList.add('opacity-0');
+        }
+    });
+    dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+            dot.classList.remove('bg-white/40');
+            dot.classList.add('bg-white');
+        } else {
+            dot.classList.remove('bg-white');
+            dot.classList.add('bg-white/40');
+        }
+    });
+}
+
+function nextSlide(e) {
+    if (e) e.preventDefault();
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
+}
+
+function prevSlide(e) {
+    if (e) e.preventDefault();
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateCarousel();
+}
+
+function goToSlide(index, e) {
+    if (e) e.preventDefault();
+    currentSlide = index;
+    updateCarousel();
+}
+
+// Auto-advance every 5 seconds
+let carouselInterval = setInterval(nextSlide, 5000);
+
+// Pause auto-advance on mouse hover, resume on mouse leave
+const carouselCard = document.getElementById('photo-carousel-card');
+if (carouselCard) {
+    carouselCard.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+    });
+    carouselCard.addEventListener('mouseleave', () => {
+        carouselInterval = setInterval(nextSlide, 5000);
+    });
+}
+</script>
 </body></html>
