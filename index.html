@@ -199,56 +199,30 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px]">
 <!-- Large Card (Carousel) -->
-<div class="md:col-span-2 lg:col-span-2 row-span-2 relative rounded-xl overflow-hidden group bg-surface-variant purple-glow-card floating-card float-delay-1" id="photo-carousel-card">
-  <!-- Carousel Images -->
-  <div class="absolute inset-0 w-full h-full" id="carousel-slides">
-    <img alt="Victoria con perro y trofeo" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-100" src="victoria_trofeo.jpg"/>
-    <img alt="Perros en el campo" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="perros.jpg"/>
-    <img alt="Deporte y túnel" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="deporte_tunel.jpg"/>
-    <img alt="Paseo de perros" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="paseo_perros.jpg"/>
-    <img alt="Victoria con perro negro" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="victoria_perro_negro.jpg"/>
-    <img alt="Victoria con bull terrier" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="victoria_bull_terrier.jpg"/>
-    <img alt="Victoria con pug" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="victoria_pug.jpg"/>
-    <img alt="Victoria con tres perros" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="victoria_tres_perros.jpg"/>
-    <img alt="Educación básica - Foto 1" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_1.jpg"/>
-    <img alt="Educación básica - Foto 2" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_2.jpg"/>
-    <img alt="Educación básica - Foto 3" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_3.jpg"/>
-    <img alt="Educación básica - Foto 4" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out opacity-0" src="foto_4.jpg"/>
-  </div>
+<!-- Large Card (Album Trigger) -->
+<div onclick="openAlbum(0)" class="md:col-span-2 lg:col-span-2 row-span-2 relative rounded-xl overflow-hidden group bg-surface-variant purple-glow-card floating-card float-delay-1 cursor-pointer" id="photo-carousel-card">
+  <!-- Cover Image -->
+  <img alt="Álbum de fotos Victoria Sornosa" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 opacity-90" src="album_1.jpg"/>
+  
   <!-- Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none z-10"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none z-10"></div>
   
-  <!-- Navigation Controls -->
-  <div class="absolute inset-0 flex justify-between items-center px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-    <button onclick="prevSlide(event)" class="w-10 h-10 rounded-full bg-black/60 hover:bg-purple-600 text-white flex items-center justify-center backdrop-blur-sm pointer-events-auto transition-colors border border-purple-500/30 shadow-md">
-      <span class="material-symbols-outlined">chevron_left</span>
-    </button>
-    <button onclick="nextSlide(event)" class="w-10 h-10 rounded-full bg-black/60 hover:bg-purple-600 text-white flex items-center justify-center backdrop-blur-sm pointer-events-auto transition-colors border border-purple-500/30 shadow-md">
-      <span class="material-symbols-outlined">chevron_right</span>
-    </button>
-  </div>
-  
-  <!-- Indicators / Dots -->
-  <div class="absolute top-6 right-6 flex space-x-2 z-20 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/10">
-    <button onclick="goToSlide(0, event)" class="w-2.5 h-2.5 rounded-full bg-white transition-all duration-300" aria-label="Slide 1"></button>
-    <button onclick="goToSlide(1, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 2"></button>
-    <button onclick="goToSlide(2, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 3"></button>
-    <button onclick="goToSlide(3, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 4"></button>
-    <button onclick="goToSlide(4, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 5"></button>
-    <button onclick="goToSlide(5, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 6"></button>
-    <button onclick="goToSlide(6, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 7"></button>
-    <button onclick="goToSlide(7, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 8"></button>
-    <button onclick="goToSlide(8, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 9"></button>
-    <button onclick="goToSlide(9, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 10"></button>
-    <button onclick="goToSlide(10, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 11"></button>
-    <button onclick="goToSlide(11, event)" class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all duration-300" aria-label="Slide 12"></button>
+  <!-- Center Expand Icon Badge -->
+  <div class="absolute inset-0 flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
+    <div class="w-16 h-16 rounded-full bg-purple-600/90 text-white flex items-center justify-center backdrop-blur-md shadow-2xl border border-purple-400/40">
+      <span class="material-symbols-outlined text-4xl">fullscreen</span>
+    </div>
   </div>
 
   <!-- Content Overlay -->
-  <div class="absolute bottom-0 left-0 p-8 w-full z-10 pointer-events-none">
-    <span class="inline-block px-3 py-1 bg-purple-600 text-white font-label-md text-label-md rounded-full mb-3 pointer-events-auto shadow-sm">Galería de fotos</span>
-    <h3 class="font-headline-md text-headline-md text-purple-300 mb-2 pointer-events-auto font-bold drop-shadow-md">Educación básica</h3>
-    <p class="font-body-md text-body-md text-gray-200 pointer-events-auto drop-shadow-sm">Fundamentos para una convivencia armoniosa con casos reales.</p>
+  <div class="absolute bottom-0 left-0 p-8 w-full z-20 pointer-events-none">
+    <span class="inline-block px-3.5 py-1.5 bg-purple-600 text-white font-label-md text-label-md rounded-full mb-3 shadow-md pointer-events-auto">
+      Álbum de fotos • 46 fotos
+    </span>
+    <h3 class="font-headline-md text-headline-md text-purple-300 mb-2 pointer-events-auto font-bold drop-shadow-md">Galería Completa</h3>
+    <p class="font-body-md text-body-md text-gray-200 pointer-events-auto drop-shadow-sm flex items-center gap-2">
+      <span>Haz clic para abrir a pantalla completa (Pase automático cada 3s)</span>
+    </p>
   </div>
 </div>
 <!-- Regular Cards -->
@@ -430,63 +404,152 @@
 <div class="font-['Manrope'] text-sm uppercase tracking-widest text-gray-500">© 2024 Victoria Sornosa Rueda. Educación Canina en Riaza y Segovia.</div>
 </div>
 </footer>
+
+<!-- Fullscreen Lightbox Modal -->
+<div id="album-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col justify-between p-4 md:p-8 select-none transition-opacity duration-300">
+  <!-- Top Bar Controls -->
+  <div class="flex items-center justify-between z-30 w-full max-w-7xl mx-auto px-4">
+    <!-- Slide Counter & Title -->
+    <div class="flex items-center gap-3 text-white">
+      <span class="material-symbols-outlined text-purple-400">photo_library</span>
+      <span class="font-semibold text-lg" id="modal-counter">1 / 46</span>
+    </div>
+    <!-- Play/Pause & Close Controls -->
+    <div class="flex items-center gap-4">
+      <button onclick="toggleAutoplay()" id="autoplay-btn" class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-purple-600 text-white transition-all border border-white/20 shadow-md cursor-pointer">
+        <span class="material-symbols-outlined text-xl" id="autoplay-icon">pause</span>
+        <span class="text-sm font-medium hidden sm:inline" id="autoplay-text">Pausar (3s)</span>
+      </button>
+      <button onclick="closeAlbum()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-red-600 text-white flex items-center justify-center transition-all border border-white/20 shadow-md cursor-pointer">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Center Image Container (Strictly Uncropped / Object Contain on Black Background) -->
+  <div class="relative flex-1 w-full max-w-7xl mx-auto flex items-center justify-center my-4 overflow-hidden">
+    <!-- Left Navigation Button -->
+    <button onclick="prevAlbumSlide(event)" class="absolute left-2 md:left-6 z-30 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/70 hover:bg-purple-600 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/20 shadow-2xl hover:scale-110 cursor-pointer">
+      <span class="material-symbols-outlined text-3xl">chevron_left</span>
+    </button>
+
+    <!-- Uncropped Image Display -->
+    <div class="w-full h-full flex items-center justify-center p-2">
+      <img id="modal-img" src="album_1.jpg" alt="Foto del álbum" class="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl transition-opacity duration-300 opacity-100" />
+    </div>
+
+    <!-- Right Navigation Button -->
+    <button onclick="nextAlbumSlide(event)" class="absolute right-2 md:right-6 z-30 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/70 hover:bg-purple-600 text-white flex items-center justify-center backdrop-blur-md transition-all border border-white/20 shadow-2xl hover:scale-110 cursor-pointer">
+      <span class="material-symbols-outlined text-3xl">chevron_right</span>
+    </button>
+  </div>
+
+  <!-- Bottom Bar Info -->
+  <div class="text-center text-gray-400 text-xs sm:text-sm py-2">
+    <p>Usa las flechas del teclado o los botones para navegar • Pulsa <kbd class="px-1.5 py-0.5 bg-white/10 rounded border border-white/20">Esc</kbd> para salir</p>
+  </div>
+</div>
+
 <script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('#carousel-slides img');
-const dots = document.querySelectorAll('#photo-carousel-card button[onclick^="goToSlide"]');
+const albumPhotos = Array.from({ length: 46 }, (_, i) => `album_${i + 1}.jpg`);
+let currentAlbumIndex = 0;
+let albumInterval = null;
+let isAutoplayRunning = true;
 
-function updateCarousel() {
-    slides.forEach((slide, idx) => {
-        if (idx === currentSlide) {
-            slide.classList.remove('opacity-0');
-            slide.classList.add('opacity-100');
-        } else {
-            slide.classList.remove('opacity-100');
-            slide.classList.add('opacity-0');
-        }
-    });
-    dots.forEach((dot, idx) => {
-        if (idx === currentSlide) {
-            dot.classList.remove('bg-white/40');
-            dot.classList.add('bg-white');
-        } else {
-            dot.classList.remove('bg-white');
-            dot.classList.add('bg-white/40');
-        }
-    });
+function openAlbum(index = 0) {
+    currentAlbumIndex = index;
+    const modal = document.getElementById('album-modal');
+    if (!modal) return;
+    updateModalImage();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    startAutoplay();
 }
 
-function nextSlide(e) {
-    if (e) e.preventDefault();
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
+function closeAlbum() {
+    const modal = document.getElementById('album-modal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+    stopAutoplay();
 }
 
-function prevSlide(e) {
-    if (e) e.preventDefault();
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateCarousel();
+function updateModalImage() {
+    const img = document.getElementById('modal-img');
+    const counter = document.getElementById('modal-counter');
+    if (!img) return;
+    
+    img.style.opacity = '0.3';
+    setTimeout(() => {
+        img.src = albumPhotos[currentAlbumIndex];
+        img.style.opacity = '1';
+    }, 120);
+
+    if (counter) {
+        counter.textContent = `${currentAlbumIndex + 1} / ${albumPhotos.length}`;
+    }
 }
 
-function goToSlide(index, e) {
-    if (e) e.preventDefault();
-    currentSlide = index;
-    updateCarousel();
+function nextAlbumSlide(e) {
+    if (e) e.stopPropagation();
+    currentAlbumIndex = (currentAlbumIndex + 1) % albumPhotos.length;
+    updateModalImage();
 }
 
-// Auto-advance every 5 seconds
-let carouselInterval = setInterval(nextSlide, 5000);
-
-// Pause auto-advance on mouse hover, resume on mouse leave
-const carouselCard = document.getElementById('photo-carousel-card');
-if (carouselCard) {
-    carouselCard.addEventListener('mouseenter', () => {
-        clearInterval(carouselInterval);
-    });
-    carouselCard.addEventListener('mouseleave', () => {
-        carouselInterval = setInterval(nextSlide, 5000);
-    });
+function prevAlbumSlide(e) {
+    if (e) e.stopPropagation();
+    currentAlbumIndex = (currentAlbumIndex - 1 + albumPhotos.length) % albumPhotos.length;
+    updateModalImage();
 }
+
+function startAutoplay() {
+    stopAutoplay();
+    isAutoplayRunning = true;
+    updateAutoplayUI();
+    albumInterval = setInterval(() => {
+        nextAlbumSlide();
+    }, 3000);
+}
+
+function stopAutoplay() {
+    if (albumInterval) {
+        clearInterval(albumInterval);
+        albumInterval = null;
+    }
+    isAutoplayRunning = false;
+    updateAutoplayUI();
+}
+
+function toggleAutoplay() {
+    if (isAutoplayRunning) {
+        stopAutoplay();
+    } else {
+        startAutoplay();
+    }
+}
+
+function updateAutoplayUI() {
+    const icon = document.getElementById('autoplay-icon');
+    const text = document.getElementById('autoplay-text');
+    if (icon) {
+        icon.textContent = isAutoplayRunning ? 'pause' : 'play_arrow';
+    }
+    if (text) {
+        text.textContent = isAutoplayRunning ? 'Pausar (3s)' : 'Reproducir';
+    }
+}
+
+// Keyboard controls
+document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('album-modal');
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    if (e.key === 'ArrowRight') nextAlbumSlide();
+    if (e.key === 'ArrowLeft') prevAlbumSlide();
+    if (e.key === 'Escape') closeAlbum();
+});
 
 function playVideo() {
     const video = document.getElementById('presentation-video');
