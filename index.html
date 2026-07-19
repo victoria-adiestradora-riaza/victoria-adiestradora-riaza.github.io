@@ -153,6 +153,10 @@
 </div>
 <!-- Desktop Nav -->
 <div class="hidden md:flex items-center space-x-8">
+<a class="font-['Noto_Serif'] text-base tracking-tight text-amber-300 font-semibold hover:text-amber-200 transition-colors flex items-center gap-1.5" href="#horarios-verano">
+  <span class="material-symbols-outlined text-sm">wb_sunny</span>
+  Horarios de Verano
+</a>
 <a class="font-['Noto_Serif'] text-base tracking-tight text-gray-300 hover:text-purple-400 transition-colors" href="#servicios">Servicios</a>
 <a class="font-['Noto_Serif'] text-base tracking-tight text-gray-300 hover:text-purple-400 transition-colors" href="#sobre-mi">Sobre mí</a>
 <a class="font-['Noto_Serif'] text-base tracking-tight text-gray-300 hover:text-purple-400 transition-colors" href="#metodologia">Metodología</a>
@@ -185,6 +189,91 @@
     </div>
   </div>
 </header>
+
+<!-- Horarios de Verano & Clases Grupales Section -->
+<section class="relative py-16 bg-gradient-to-b from-black via-purple-950/20 to-black px-gutter border-y border-purple-500/20" id="horarios-verano">
+  <div class="relative max-w-[1200px] mx-auto z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/20 border border-amber-500/40 text-amber-300 font-semibold text-sm rounded-full mb-3 shadow-md">
+        <span class="material-symbols-outlined text-base">wb_sunny</span>
+        Especial Verano
+      </span>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-3">Horarios de Verano &amp; Clases Grupales</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+        ¡Este verano, disfruta con tu perro! Clases grupales de Obediencia Básica Recreativa en Riaza y Segovia.
+      </p>
+    </div>
+
+    <!-- 2 Column Content Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <!-- Left Column: Poster Image (Click to View Fullsize Modal) -->
+      <div class="md:col-span-5 relative group rounded-2xl overflow-hidden purple-glow-card floating-card border border-purple-500/30 shadow-2xl bg-black">
+        <img src="cartel_verano.jpg" alt="Cartel Horarios de Verano y Clases Grupales" class="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-102 cursor-pointer" onclick="openImageModal('cartel_verano.jpg', 'Cartel Horarios de Verano')"/>
+        <!-- Hover Badge -->
+        <div onclick="openImageModal('cartel_verano.jpg', 'Cartel Horarios de Verano')" class="absolute inset-0 bg-black/40 group-hover:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer pointer-events-auto">
+          <div class="px-4 py-2 bg-purple-600/90 text-white rounded-full font-medium text-sm flex items-center gap-2 backdrop-blur-md border border-white/20 shadow-xl">
+            <span class="material-symbols-outlined text-base">zoom_in</span>
+            Ampliar cartel
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Details & Information -->
+      <div class="md:col-span-7 bg-surface/80 backdrop-blur-md p-8 md:p-10 rounded-2xl border border-purple-500/20 purple-glow-card space-y-6">
+        <div>
+          <h3 class="text-2xl font-bold text-purple-300 mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-400 text-3xl">pets</span>
+            ¿Qué aprenderás?
+          </h3>
+          <ul class="space-y-3 text-gray-200 pl-1">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-purple-400 text-xl mt-0.5">check_circle</span>
+              <span><strong>Obediencia Básica:</strong> Sentado, Tumbado, Quieto y Llamada fiable.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-purple-400 text-xl mt-0.5">check_circle</span>
+              <span><strong>Caminar sin tirones:</strong> Paseos relajados y comprensivos.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-purple-400 text-xl mt-0.5">check_circle</span>
+              <span><strong>Socialización guiada:</strong> Calma y autocontrol con otros perros en plena naturaleza.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="border-t border-purple-500/20 pt-6">
+          <h3 class="text-xl font-bold text-amber-300 mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-400">workspace_premium</span>
+            Nuestras Clases &amp; Oferta Especial
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-300">
+            <div class="bg-purple-950/40 p-4 rounded-xl border border-purple-500/20">
+              <span class="block font-semibold text-white mb-1">Matrícula GRATIS</span>
+              <span class="text-xs text-gray-400">Si te apuntas antes de la fecha límite de inicio del grupo.</span>
+            </div>
+            <div class="bg-purple-950/40 p-4 rounded-xl border border-purple-500/20">
+              <span class="block font-semibold text-white mb-1">Flexibilidad total</span>
+              <span class="text-xs text-gray-400">Posibilidad de clases sueltas y consulta de grupos por semana.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-purple-500/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <span class="block text-xs uppercase tracking-wider text-purple-300">Ubicación</span>
+            <span class="font-bold text-white text-base">Riaza &amp; Segovia</span>
+          </div>
+          <a href="https://wa.me/34744458313?text=Hola%20Victoria,%20quiero%20informaci%C3%B3n%20sobre%20los%20horarios%20de%20verano" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-emerald-600 text-white font-label-md text-label-md px-8 py-3.5 rounded-full hover:bg-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] transition-all shadow-md inline-flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-xl">chat</span>
+            Consultar Horarios por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Services Grid (Bento Style) -->
 <section class="relative py-section-padding bg-surface-container-lowest px-gutter overflow-hidden" id="servicios">
   <!-- Background Wallpaper with Overlay for Readability -->
@@ -558,6 +647,22 @@ function playVideo() {
         overlay.classList.add('hidden');
         video.play();
     }
+}
+
+function openImageModal(src, title = '') {
+    const modal = document.getElementById('album-modal');
+    const img = document.getElementById('modal-img');
+    const counter = document.getElementById('modal-counter');
+    if (!modal || !img) return;
+    
+    stopAutoplay();
+    img.src = src;
+    img.style.opacity = '1';
+    if (counter) counter.textContent = title || 'Imagen';
+    
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
 }
 </script>
 </body></html>
