@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es" class="light scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Galería de Fotos | Victoria Sornosa Adiestradora</title>
+    <meta name="description" content="Galería fotográfica de 46 fotos con momentos de clases de educación canina, deportes y trabajo en campo en Riaza."/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>.purple-glow { border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15); }</style>
+</head>
+<body class="bg-black text-gray-100 font-['Manrope'] antialiased">
+
+<nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-purple-500/20">
+    <div class="flex justify-between items-center max-w-[1200px] mx-auto px-6 py-4">
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="logo_stpr.jpg" alt="Logo Educación Canina" class="h-10 w-auto object-contain rounded-md shadow-sm"/>
+            <span class="text-xl font-semibold text-purple-300 font-['Noto_Serif']">Victoria Sornosa Rueda</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-6 text-sm">
+            <a class="text-gray-300 hover:text-purple-400 transition-colors" href="index.html">Inicio</a>
+            <a class="text-gray-300 hover:text-purple-400 transition-colors" href="servicios.html">Servicios</a>
+            <a class="text-gray-300 hover:text-purple-400 transition-colors" href="sobre-mi.html">Sobre mí</a>
+            <a class="text-amber-300 font-semibold hover:text-amber-200 transition-colors flex items-center gap-1" href="horarios-verano.html">
+                <span class="material-symbols-outlined text-sm">wb_sunny</span>
+                Verano 2026
+            </a>
+            <a class="text-purple-400 font-bold transition-colors" href="galeria.html">Galería</a>
+            <a class="text-gray-300 hover:text-purple-400 transition-colors" href="contacto.html">Contacto</a>
+        </div>
+        <a class="bg-purple-600 text-white font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-purple-500 transition-all shadow-md" href="https://wa.me/34744458313" target="_blank">WhatsApp Directo</a>
+    </div>
+</nav>
+
+<header class="pt-32 pb-16 px-6 text-center bg-gradient-to-b from-purple-950/40 to-black">
+    <div class="max-w-[1200px] mx-auto">
+        <span class="px-4 py-1.5 bg-purple-900/50 border border-purple-500/30 text-purple-300 font-semibold text-xs rounded-full inline-block mb-3">46 Imágenes Originales</span>
+        <h1 class="text-4xl md:text-5xl font-bold font-['Noto_Serif'] text-purple-300 mb-4">Galería del Centro Canino</h1>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">Momentos reales de aprendizaje, deporte y convivencia en Riaza.</p>
+    </div>
+</header>
+
+<section class="py-12 px-6 max-w-[1200px] mx-auto">
+    <div class="bg-surface/80 p-8 rounded-2xl purple-glow text-center space-y-6">
+        <h2 class="text-2xl font-bold text-white font-['Noto_Serif']">Álbum Interactivo a Pantalla Completa</h2>
+        <p class="text-gray-300 text-sm max-w-md mx-auto">Haz clic para abrir el visor interactivo con pase automático de 3s, botón de pausa y proporción original sin recorte.</p>
+        <button onclick="openAlbum(0)" class="bg-purple-600 text-white font-semibold px-8 py-3.5 rounded-full hover:bg-purple-500 transition-all shadow-lg inline-flex items-center gap-2">
+            <span class="material-symbols-outlined text-xl">photo_library</span>
+            Abrir Visor Completo (46 Fotos)
+        </button>
+    </div>
+</section>
+
+<!-- Fullscreen Lightbox Modal -->
+<div id="album-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex-col justify-between p-4 md:p-8 select-none">
+  <div class="flex items-center justify-between z-30 w-full max-w-7xl mx-auto px-4 text-white">
+    <span class="font-semibold text-lg" id="modal-counter">1 / 46</span>
+    <div class="flex gap-4">
+      <button onclick="toggleAutoplay()" id="autoplay-btn" class="px-4 py-2 rounded-full bg-white/10 hover:bg-purple-600 text-white border border-white/20 text-sm">Pausar (3s)</button>
+      <button onclick="closeAlbum()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-red-600 text-white flex items-center justify-center border border-white/20">✕</button>
+    </div>
+  </div>
+  <div class="relative flex-1 w-full max-w-7xl mx-auto flex items-center justify-center my-4 overflow-hidden">
+    <button onclick="prevAlbumSlide(event)" class="absolute left-2 z-30 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/20">‹</button>
+    <div class="w-full h-full flex items-center justify-center p-2">
+      <img id="modal-img" src="album_1.jpg" alt="Foto del álbum" class="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl transition-opacity duration-300" />
+    </div>
+    <button onclick="nextAlbumSlide(event)" class="absolute right-2 z-30 w-12 h-12 rounded-full bg-black/70 text-white flex items-center justify-center border border-white/20">›</button>
+  </div>
+</div>
+
+<script>
+const albumPhotos = Array.from({ length: 46 }, (_, i) => "album_" + (i + 1) + ".jpg");
+let currentAlbumIndex = 0;
+let albumInterval = null;
+let isAutoplayRunning = true;
+
+function openAlbum(index = 0) {
+    currentAlbumIndex = index;
+    const modal = document.getElementById('album-modal');
+    if (!modal) return;
+    updateModalImage();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    startAutoplay();
+}
+function closeAlbum() {
+    const modal = document.getElementById('album-modal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+    stopAutoplay();
+}
+function updateModalImage() {
+    const img = document.getElementById('modal-img');
+    const counter = document.getElementById('modal-counter');
+    if (!img) return;
+    img.style.opacity = '0.3';
+    setTimeout(() => { img.src = albumPhotos[currentAlbumIndex]; img.style.opacity = '1'; }, 120);
+    if (counter) counter.textContent = (currentAlbumIndex + 1) + " / " + albumPhotos.length;
+}
+function nextAlbumSlide(e) { if (e) e.stopPropagation(); currentAlbumIndex = (currentAlbumIndex + 1) % albumPhotos.length; updateModalImage(); }
+function prevAlbumSlide(e) { if (e) e.stopPropagation(); currentAlbumIndex = (currentAlbumIndex - 1 + albumPhotos.length) % albumPhotos.length; updateModalImage(); }
+function startAutoplay() { stopAutoplay(); isAutoplayRunning = true; albumInterval = setInterval(nextAlbumSlide, 3000); }
+function stopAutoplay() { if (albumInterval) clearInterval(albumInterval); albumInterval = null; isAutoplayRunning = false; }
+function toggleAutoplay() { if (isAutoplayRunning) stopAutoplay(); else startAutoplay(); }
+</script>
+
+
+<footer class="py-12 bg-black border-t border-purple-500/20 text-gray-400 text-sm">
+    <div class="max-w-[1200px] mx-auto px-6 space-y-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="logo_stpr.jpg" alt="Logo" class="h-8 w-auto object-contain"/>
+                <span class="text-purple-300 font-serif italic">Victoria Sornosa Rueda</span>
+            </div>
+            <div class="flex flex-wrap gap-6 text-sm">
+                <a href="index.html" class="hover:text-purple-400">Inicio</a>
+                <a href="servicios.html" class="hover:text-purple-400">Servicios</a>
+                <a href="sobre-mi.html" class="hover:text-purple-400">Sobre mí</a>
+                <a href="horarios-verano.html" class="hover:text-purple-400">Verano 2026</a>
+                <a href="galeria.html" class="hover:text-purple-400">Galería</a>
+                <a href="contacto.html" class="hover:text-purple-400">Contacto</a>
+            </div>
+        </div>
+
+        <div class="border-t border-purple-500/10 pt-6">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-purple-400 mb-4">Red de Atención Local en la Comarca de Riaza & Alrededores:</h4>
+            
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-xs text-gray-400">
+    <a href="pueblos/adiestrador-canino-riaza.html" class="hover:text-purple-300">Riaza</a>
+    <a href="pueblos/adiestrador-canino-boceguillas.html" class="hover:text-purple-300">Boceguillas</a>
+    <a href="pueblos/adiestrador-canino-ayllon.html" class="hover:text-purple-300">Ayllón</a>
+    <a href="pueblos/adiestrador-canino-sepulveda.html" class="hover:text-purple-300">Sepúlveda</a>
+    <a href="pueblos/adiestrador-canino-cerezo-de-abajo.html" class="hover:text-purple-300">Cerezo de Abajo</a>
+    <a href="pueblos/adiestrador-canino-cerezo-de-arriba.html" class="hover:text-purple-300">Cerezo de Arriba</a>
+    <a href="pueblos/adiestrador-canino-grajera.html" class="hover:text-purple-300">Grajera</a>
+    <a href="pueblos/adiestrador-canino-campo-de-san-pedro.html" class="hover:text-purple-300">Campo de San Pedro</a>
+    <a href="pueblos/adiestrador-canino-santo-tome-del-puerto.html" class="hover:text-purple-300">Santo Tomé del Puerto</a>
+    <a href="pueblos/adiestrador-canino-pradena.html" class="hover:text-purple-300">Prádena</a>
+    <a href="pueblos/adiestrador-canino-cantalejo.html" class="hover:text-purple-300">Cantalejo</a>
+    <a href="pueblos/adiestrador-canino-pedraza.html" class="hover:text-purple-300">Pedraza</a>
+    <a href="pueblos/adiestrador-canino-maderuelo.html" class="hover:text-purple-300">Maderuelo</a>
+    <a href="pueblos/adiestrador-canino-fresno-de-la-fuente.html" class="hover:text-purple-300">Fresno de la Fuente</a>
+    <a href="pueblos/adiestrador-canino-sacramenia.html" class="hover:text-purple-300">Sacramenia</a>
+    <a href="pueblos/adiestrador-canino-la-pinilla.html" class="hover:text-purple-300">La Pinilla</a>
+    <a href="pueblos/adiestrador-canino-buitrago-del-lozoya.html" class="hover:text-purple-300">Buitrago del Lozoya</a>
+    <a href="pueblos/adiestrador-canino-montejo-de-la-sierra.html" class="hover:text-purple-300">Montejo de la Sierra</a>
+    <a href="pueblos/adiestrador-canino-aranda-de-duero.html" class="hover:text-purple-300">Aranda de Duero</a>
+    <a href="pueblos/adiestrador-canino-segovia-capital.html" class="hover:text-purple-300">Segovia Capital</a>
+</div>
+        </div>
+
+        <div class="text-center text-xs text-gray-600 pt-4">
+            © 2026 Victoria Sornosa Rueda. Adiestramiento y Educación Canina Profesional. Riaza, Segovia.
+        </div>
+    </div>
+</footer>
+</body>
+</html>
