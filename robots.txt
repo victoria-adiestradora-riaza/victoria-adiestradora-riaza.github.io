@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://victoria-adiestradora-riaza.github.io/sitemap.xml
